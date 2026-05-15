@@ -1,0 +1,27 @@
+[project]
+name = "ship-sat-demo-portable"
+version = "0.1.0"
+description = "Standalone CPU demo: Streamlit + YOLO-OBB + SAHI ship detection."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics>=8.3.0",
+    "sahi>=0.11.18",
+    "streamlit>=1.28.0",
+    "opencv-python-headless>=4.8.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.66.0",
+]
+
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ship_sat"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/ship_sat", "README.md", "configs", "streamlit_app.py"]

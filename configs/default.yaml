@@ -1,0 +1,20 @@
+# Default training / inference settings (override via CLI or Streamlit).
+
+model: yolo11n-obb.pt
+epochs: 50
+imgsz: 768
+batch: 8
+device: "0"
+
+dataset:
+  class_name: ship
+  val_ratio: 0.15
+  seed: 42
+  min_contour_area: 2.0
+
+sahi:
+  slice_width: 640
+  slice_height: 640
+  overlap_width_ratio: 0.2
+  overlap_height_ratio: 0.2
+  confidence_threshold: 0.25
